@@ -13,6 +13,8 @@ var app = new Vue({
     oink: null,
     frames: [],
     shareTwitterHref: '',
+    shareFacebook:'',
+    isSharing: true,
   },
 
   methods: {
