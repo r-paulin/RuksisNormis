@@ -8,7 +8,7 @@
     content="Palīdzi saimniekam noķert bezkaunīgo Ruksi Normi, kas ticis brīvībā un sācis taisīt podus saimnieka druvā.">
 <meta name="theme-color" content="#db5945">
 <link rel="icon" sizes="192x192"
-    href="https://www.gstatic.com/images/icons/material/product/2x/chrome_chromium_64dp.png">
+    href="assets/Normis.png">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -37,33 +37,92 @@
     <link rel="stylesheet" href="styles/bootstrap-reboot.css">
     <link rel="stylesheet" href="styles/bootstrap-grid.css">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <title>Ruksis Normis - Izglāb samnieka druvu, noķer bezkaunīgo ruksi</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col col-sm-6 pb1">
-                <h1>Noķer ruksi Normi un izglāb samnieka druvu</h1>
-                <p class="lead">Tev būs dotas 24 sekundes, lai saganītu neganto Ruksi Normi. Uzmanies viņš ir veikls, un
-                    spēja ātri skriet pa saimnieka druvu!</p>
-                <button class="btn">
-                    Sākt spēli
-                </button><br>
-                <a href="heoo.txt">text</a>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3"> <img src=""></div>
+                    <nav class="col-9 text-right">
+                        <a href="game-en.html" class="nav-link"><span><img src="assets/angliski.png" alt="English"
+                                    class="flag"></span>English</a>
+                        <a href="" class="nav-link btn"><span><img src="assets/veikals.svg" alt="veikals"></span>Rukša veikals</a>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </div>
+        </header>
 
-</body>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <p>Spēli veidoja <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Riga Coding School mājadarba ietvaros</p>
+        <main>
+            <div id="start" v-if="startVisible">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-6 pb1">
+                            <h1>Noķer ruksi Normi un izglāb samnieka druvu</h1>
+                            <p class="lead">Tev būs dotas 24 sekundes, lai saganītu neganto Ruksi Normi. Uzmanies viņš
+                                ir
+                                veikls, un spēja ātri skriet pa saimnieka druvu!</p>
+                            <button v-on:click.capture="startGame" class="btn btnNormis">Sākt spēli</button>
+                        </div>
+                        <div class="col-12 col-sm-6 text-center">
+                            <img src="assets/zemnieks.svg" alt="zemnieks ar ruksi Normi">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div id="game" class="container" v-if="gameVisible">
+                <h2 class="text-center">Laiks: {{hitTimeStart}}</h2>
+                <div class="row game-canvas">
+                    <template v-for="(frame, index) in frames">
+                        <button class="col-3 col-sm-2 item"
+                            v-bind:class="{ hasPig: frame.isNormis, hasPigSlapped: frame.isSlapped }"
+                            v-on:click.capture="hit(frame)" :key="index"></button>
+                    </template>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Tavs rezultāts: {{hitScore}}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="message" v-if="messageVisible">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-12">
+                            <img src="assets/Normis-last.svg" class="img-fluid img-normis wobble-hor-bottom" alt="ruksis Normis">
+                            <h1>Tu palīdzēji saimniekam {{hitScore}} reizes</h1>
+                            <button v-on:click.capture="restartGame" class="btn">Spēlēt vēlreiz</button>
+                        </div>
+                        <div class="col-12 share">
+                            <h3>Patika spēle?</h3>
+                            <p class="lead">Palielies citiem ar savu rezultātu...</p>
+                            <a v-bind:href="shareTwitterHref" target="_blank"><img src="assets/fb-icon.svg" class="social" alt="Dalīties Facebook"></a>
+                            <a v-bind:href="shareTwitterHref" target="_blank"><img src="assets/twitter-icon.svg" class="social" alt="Dalīties Twitterī"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p>Spēli veidoja <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Riga Coding
+                            School
+                            mājadarba ietvaros</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
+    <script src="game.js"></script>
+</body>
+
 </html>
