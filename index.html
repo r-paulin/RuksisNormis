@@ -7,8 +7,7 @@
 <meta name="description"
     content="Palīdzi saimniekam noķert bezkaunīgo Ruksi Normi, kas ticis brīvībā un sācis taisīt podus saimnieka druvā.">
 <meta name="theme-color" content="#db5945">
-<link rel="icon" sizes="192x192"
-    href="assets/Normis.png">
+<link rel="icon" sizes="192x192" href="assets/Normis.png">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
@@ -51,7 +50,8 @@
                     <nav class="col-9 text-right">
                         <a href="game-en.html" class="nav-link"><span><img src="assets/angliski.png" alt="English"
                                     class="flag"></span>English</a>
-                        <a href="" class="nav-link btn"><span><img src="assets/veikals.svg" alt="veikals"></span>Rukša veikals</a>
+                        <a href="store.html" class="nav-link btn"><span><img src="assets/veikals.svg" alt="veikals"></span>Rukša
+                            veikals</a>
                     </nav>
                 </div>
             </div>
@@ -95,17 +95,22 @@
                 <div class="container">
                     <div class="row text-center">
                         <div class="col-12">
-                            <img src="assets/Normis-last.svg" class="img-fluid img-normis wobble-hor-bottom" alt="ruksis Normis">
-                            <h1>Tu palīdzēji saimniekam {{hitScore}} reizes</h1>
+                            <img src="assets/Normis-last.svg" class="img-fluid img-normis wobble-hor-bottom"
+                                alt="ruksis Normis" width="120rem">
+                            <h1>Tavs rezultāts: {{hitScore}}</h1>
+                            <p class="lead">Saimnieks, saka Tev paldies par palīdzību Rukša Normja ķeršanā!</p>
                             <button v-on:click.capture="restartGame" class="btn">Spēlēt vēlreiz</button>
                         </div>
                         <div class="col-12 share">
                             <h3>Patika spēle?</h3>
-                            <p class="lead">Palielies citiem ar savu rezultātu...</p>
-                            <a v-bind:href="shareTwitterHref" target="_blank"><img src="assets/fb-icon.svg" class="social" alt="Dalīties Facebook"></a>
-                            <a v-bind:href="shareTwitterHref" target="_blank"><img src="assets/twitter-icon.svg" class="social" alt="Dalīties Twitterī"></a>
-                            
-                            <!--<iframe v-bind:src="shareHref" v-if="isSharing" @click="is = true"></iframe>-->
+                            <p class="lead">Padalies ar savu rezultātu...</p>
+
+                            <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fcss-tricks.com%2F"
+                                target="_blank"><img src="assets/fb-icon.svg" class="social"
+                                    alt="Dalīties Facebook"></a>
+
+                            <a v-bind:href="shareTwitterHref" target="_blank"><img src="assets/twitter-icon.svg"
+                                    class="social" alt="Dalīties Twitterī"></a>
                         </div>
                     </div>
                 </div>
@@ -116,9 +121,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p>Spēli veidoja <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Riga Coding
-                            School
-                            mājadarba ietvaros</p>
+                        <p>Spēles veidoja <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Riga Coding
+                            School mājasdarba ietvaros</p>
                     </div>
                 </div>
             </div>

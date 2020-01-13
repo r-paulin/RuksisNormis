@@ -6,14 +6,12 @@ var app = new Vue({
     hitScore: 0,
     hitInterval: null,
     isPaused: false,
-    message: 'Hello Vue!',
     startVisible: true,
     gameVisible: false,
     messageVisible: false,
     oink: null,
     frames: [],
     shareTwitterHref: '',
-    shareFacebook:'',
     isSharing: true,
   },
 
@@ -102,9 +100,9 @@ var app = new Vue({
       this.startGame()
     },
     generateShareText() {
-      const text = `I just brutally genocided ${this.hitScore} pigs!`;
+      const text = `Šodien palīdzēju noķert veselas ${this.hitScore} reizes Ruksi Normi! Tas gan ir viens reāls sivēns! `;
 
-      this.shareTwitterHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent("about:blank")}&text=${encodeURIComponent(text)}&hashtags=oink,ruksisnormis`;
+      this.shareTwitterHref = `https://twitter.com/intent/tweet?url=${encodeURIComponent("about:blank")}&text=${encodeURIComponent(text)}&hashtags=Lauki,Ruksisnormis`;
     }
   },
   mounted: function () {
