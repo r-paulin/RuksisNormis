@@ -106,6 +106,6 @@ var app = new Vue({
     }
   },
   mounted: function () {
-    this.oink = new Audio("Assets/pig-oink.mp3");
+    this.oink = new Audio("assets/pig-oink.mp3");
   }
 })
