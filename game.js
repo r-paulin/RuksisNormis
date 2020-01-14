@@ -19,7 +19,7 @@ var app = new Vue({
     startGame() {
       this.startVisible = false;
       this.gameVisible = true;
-      this.hitTimeStart = 30;
+      this.hitTimeStart = 24;
       this.hitScore = 0;
 
       this.imageNormis();
