@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="lv">
+<html lang="en">
 
 <!-- Primary Meta Tags -->
-<title>Ruksis Normis - Bezmaksas online spēle </title>
-<meta name="title" content="Ruksis Normis - Bezmaksas online spēle">
+<title>Pig Normis - Free online game</title>
+<meta name="title" content="Pig Normis - Free online game">
 <meta name="description"
     content="Palīdzi saimniekam noķert bezkaunīgo Ruksi Normi, kas ticis brīvībā un sācis taisīt podus saimnieka druvā.">
 <meta name="theme-color" content="#db5945">
@@ -12,18 +12,18 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://metatags.io/">
-<meta property="og:title" content="Ruksis Normis - Bezmaksas online spēle">
+<meta property="og:title" content="Pig Normis - Free online game">
 <meta property="og:description"
-    content="Palīdzi saimniekam noķert bezkaunīgo Ruksi Normi, kas ticis brīvībā un sācis taisīt podus saimnieka druvā.">
+    content="Help farmer to catch piggy Normis and save his garden!">
 <meta property="og:image"
     content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://metatags.io/">
-<meta property="twitter:title" content="Ruksis Normis - Bezmaksas online spēle">
+<meta property="twitter:title" content="Pig Normis - Free online game">
 <meta property="twitter:description"
-    content="Palīdzi saimniekam noķert bezkaunīgo Ruksi Normi, kas ticis brīvībā un sācis taisīt podus saimnieka druvā.">
+    content="Help farmer to catch piggy Normis and save his garden!">
 <meta property="twitter:image"
     content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
@@ -36,8 +36,6 @@
     <link rel="stylesheet" href="styles/bootstrap-grid.css">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-    <title>Ruksis Normis - Izglāb samnieka druvu, noķer bezkaunīgo ruksi</title>
 </head>
 
 <body>
@@ -45,10 +43,10 @@
         <header>
             <div class="container">
                 <div class="row">
-                    <div class="col-6 col-sm-7 text-left"><a href="index.html"><img src="assets/logo.svg" alt="Ruksis Normis"></a></div>
-                    <div class="col-6 col-sm-2 text-right"><a href="index-eng.html"><span><img src="assets/angliski.png" alt="English"
-                        class="flag"></span>English</a></div>
-                    <div class="col-10 offset-1 col-sm-3 offset-sm-0 btn"><a href="store.html">Rukša veikals ⥂</a></div>
+                    <div class="col-6 col-sm-7 text-left"><a href="index-eng.html"><img src="assets/logo.svg" alt="Ruksis Normis"></a></div>
+                    <div class="col-6 col-sm-2 text-right"><a href="index.html"><span><img src="assets/latviski.png" alt="Latviski"
+                        class="flag"></span>Latviski</a></div>
+                    <div class="col-10 offset-1 col-sm-3 offset-sm-0 btn"><a href="store.html">Piggies store ⥂</a></div>
                 </div>
             </div>
         </header>
@@ -58,11 +56,9 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-12 col-sm-6">
-                            <h1>Noķer ruksi Normi un izglāb samnieka druvu</h1>
-                            <p class="lead">Tev būs dotas 24 sekundes, lai saganītu neganto Ruksi Normi. Uzmanies viņš
-                                ir
-                                veikls, un spēja ātri skriet pa saimnieka druvu!</p>
-                            <button v-on:click.capture="startGame" class="btn btnNormis">Sākt spēli</button>
+                            <h1>Help farmer to catch piggy Normis and save his garden!</h1>
+                            <p class="lead">You have 24 seconds, to catch the ferocious piggy Normis. But be careful piggie Normis is fast.</p>
+                            <button v-on:click.capture="startGame" class="btn btnNormis">Start the game</button>
                         </div>
                         <div class="col-12 col-sm-6 text-center">
                             <img src="assets/zemnieks.svg" alt="zemnieks ar ruksi Normi">
@@ -72,7 +68,7 @@
             </div>
 
             <div id="game" class="container" v-if="gameVisible">
-                <h2 class="text-center">Laiks: {{hitTimeStart}}</h2>
+                <h2 class="text-center">Time left: {{hitTimeStart}}</h2>
                 <div class="row game-canvas">
                     <template v-for="(frame, index) in frames">
                         <button class="col-3 col-sm-2 item"
@@ -82,7 +78,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h3>Tavs rezultāts: {{hitScore}}</h3>
+                        <h3>Your score: {{hitScore}}</h3>
                     </div>
                 </div>
             </div>
@@ -93,13 +89,13 @@
                         <div class="col-12">
                             <img src="assets/Normis-last.svg" class="img-fluid img-normis wobble-hor-bottom"
                                 alt="ruksis Normis" width="120rem">
-                            <h1>Tavs rezultāts: {{hitScore}}</h1>
-                            <p class="lead">Saimnieks, saka Tev paldies par palīdzību Rukša Normja ķeršanā!</p>
-                            <button v-on:click.capture="restartGame" class="btn">Spēlēt vēlreiz</button>
+                            <h1>Your score: {{hitScore}}</h1>
+                            <p class="lead">Farmer say thank you for helping to catch piggie Normis!</p>
+                            <button v-on:click.capture="restartGame" class="btn">Play again</button>
                         </div>
                         <div class="col-12 share">
-                            <h3>Patika spēle?</h3>
-                            <p class="lead">Padalies ar savu rezultātu...</p>
+                            <h3>Liked this game?</h3>
+                            <p class="lead">Share it with your friends...</p>
 
                             <a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fcss-tricks.com%2F"
                                 target="_blank"><img src="assets/fb-icon.svg" class="social"
@@ -117,8 +113,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <p>Autors <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Spēle veidota Riga Coding
-                            School mājasdarba ietvaros</p>
+                        <p>Author <a href="https://paulins.me/" target="_blank">Reinis Pauliņš</a>, Game developed as homework at Riga Coding
+                            School</p>
                     </div>
                 </div>
             </div>
