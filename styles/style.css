@@ -573,6 +573,7 @@ h6 {
 .btn a {
     color: var(--grey1);
 }
+
 @media (prefers-reduced-motion: reduce) {
     .btn {
         transition: none;
@@ -675,6 +676,7 @@ main>div {
 .hasPigSlapped,
 .hasPig:active {
     background-image: url(../assets/cuka-sap.svg);
+    transition-timing-function: ease;
 }
 
 #game button {
