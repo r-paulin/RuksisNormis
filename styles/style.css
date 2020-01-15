@@ -620,7 +620,7 @@ fieldset:disabled a.btn {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 header,
